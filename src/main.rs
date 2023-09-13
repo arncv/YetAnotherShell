@@ -4,11 +4,16 @@ use std::path::Path;
 use std::process::{Child, Command, Stdio};
 
 fn main() {
-    let mut current_year = 2023; // Initialize with the actual current year
+    let roasts = vec![
+        "You're not stupid; you just have bad luck thinking.",
+        "Remember when I asked for your opinion? Me neither.",
+        "Even a kid could write better code.",
+        "Really, that's the shit you wrote? Lol",
+        "I am not saying I am not dissapointed.",
+    ];
 
     loop {
-        // Include the "current year" in the prompt
-        print!("{}> ", current_year);
+        print!("> ");
         stdout().flush().unwrap();
 
         let mut input = String::new();
@@ -20,7 +25,7 @@ fn main() {
         while let Some(command) = commands.next() {
             let mut parts = command.trim().split_whitespace();
             let command = parts.next().unwrap();
-            let mut args = parts;
+            let args = parts;
 
             match command {
                 "cd" => {
@@ -32,16 +37,11 @@ fn main() {
                     previous_command = None;
                 }
                 "exit" => return,
-                "time_travel" => {
-                    if let Some(year) = args.next() {
-                        if let Ok(year) = year.parse::<i32>() {
-                            current_year = year;
-                            println!("Whoa! You've traveled to the year {}!", current_year);
-                        } else {
-                            eprintln!("Invalid year!");
-                        }
-                    } else {
-                        eprintln!("Please provide a year to travel to!");
+                "roast_me" => {
+                    use rand::seq::SliceRandom;
+                    let random_roast = roasts.choose(&mut rand::thread_rng());
+                    if let Some(roast) = random_roast {
+                        println!("{}", roast);
                     }
                     previous_command = None;
                 }
