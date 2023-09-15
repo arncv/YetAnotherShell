@@ -9,7 +9,15 @@ fn main() {
         "Remember when I asked for your opinion? Me neither.",
         "Even a kid could write better code.",
         "Really, that's the shit you wrote? Lol",
-        "I am not saying I am not dissapointed.",
+        "I am not saying I am not disappointed.",
+    ];
+
+    let fortunes = vec![
+        "You will find great success in your future endeavors.",
+        "A smile is your passport into the hearts of others.",
+        "The best way to predict the future is to create it.",
+        "You will soon embark on a great adventure.",
+        "Good things come to those who wait.",
     ];
 
     loop {
@@ -42,6 +50,14 @@ fn main() {
                     let random_roast = roasts.choose(&mut rand::thread_rng());
                     if let Some(roast) = random_roast {
                         println!("{}", roast);
+                    }
+                    previous_command = None;
+                }
+                "fortune" => {
+                    use rand::seq::SliceRandom;
+                    let random_fortune = fortunes.choose(&mut rand::thread_rng());
+                    if let Some(fortune) = random_fortune {
+                        println!("{}", fortune);
                     }
                     previous_command = None;
                 }

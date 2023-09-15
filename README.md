@@ -50,12 +50,15 @@ Once you've fired up the shell, you'll be greeted with a > prompt. Here's a quic
     Because why not! xD
 
 ## 🤝 Contributing
+
 Contributions are always welcome! Fork the repo, create a feature branch, and send in your pull request.
 
 ## 📜 License
+
 This project is under the MIT License.
 
 ## 🙏 Acknowledgments
+
 * A big shoutout to the Rust community for their incredible language and tools.
 * Kudos to all the brave souls ready to be roasted by a shell.
 * [Build Your Own Rust Shell Blog](https://www.joshmcguigan.com/blog/build-your-own-shell-rust/)
