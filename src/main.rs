@@ -61,6 +61,22 @@ fn main() {
                     }
                     previous_command = None;
                 }
+                "ascii_art" => {
+                    let arts = vec![
+                        art::art("cow"),
+                        art::art("dragon"),
+                        art::art("ghost"),
+                        art::art("kitty"),
+                        art::art("tux"),
+                    ];
+
+                    use rand::seq::SliceRandom;
+                    let random_art = arts.choose(&mut rand::thread_rng());
+                    if let Some(art) = random_art {
+                        println!("{}", art);
+                    }
+                    previous_command = None;
+                }
                 command => {
                     let stdin = previous_command.map_or(Stdio::inherit(), |output: Child| {
                         Stdio::from(output.stdout.unwrap())
