@@ -11,16 +11,19 @@ Welcome to YetAnotherShell. This is a quirky and (let's be honest) somewhat usel
 ## 🚀 Getting Started
 
 **Prerequisites**
+
 Ensure you have Rust and Cargo installed on your machine.
 
 **Installation Steps**
+
 Clone the Repository:
 
-```git clone https://github.com/yourusername/YetAnotherShell.git```
+```git clone https://github.com/arncv/YetAnotherShell.git```
 
 Enter the Project Directory:
 
 ```cd YetAnotherShell```
+
 **Build & Run:**
 
 ```cargo run```
